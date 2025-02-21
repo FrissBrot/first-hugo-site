@@ -1,5 +1,5 @@
 media:
-  input: static/assets
+  input: static/assets/images/
   output: /assets/images/
   extensions: [ jpg, jpeg, png, webp, gif, svg ]
 
@@ -15,10 +15,16 @@ content:
         label: Title
         type: string
         required: true
-      - name: enabled
+      - name: params.profileMode.title
+        lable: Titel
+        type: string
+      - name: params.profileMode.enabled
         label: "Profile Mode"
         type: boolean
-      - name: imageUrl
+      - name: params.profileMode.subtitle
+        label: "subtitle"
+        type: string
+      - name: params.profileMode.imageUrl
         label: picture
         type: image
         list: false
@@ -31,6 +37,7 @@ content:
     type: collection
     path: content/posts
     icon: book-check
+    filename: 'fields.title.md'
     view:
       fields:
         - title
