@@ -1,6 +1,6 @@
 media:
   input: static/assets
-  output: /assets
+  output: /assets/images/
   extensions: [ jpg, jpeg, png, webp, gif, svg ]
 
 content:
@@ -15,16 +15,13 @@ content:
         label: Title
         type: string
         required: true
-      - name: subTitle
-        label: subtitle
-        type: string
-      - name: ProfileMode
+      - name: enabled
         label: "Profile Mode"
         type: boolean
-      - name: picture
+      - name: imageUrl
         label: picture
         type: image
-        list: true
+        list: false
         options:
           path: /assets/images/
           extensions: [ jpg, jpeg, png, webp, gif, svg ]
