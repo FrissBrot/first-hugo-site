@@ -1,0 +1,4 @@
+baseURL: https://hugo.tweber.ch
+languageCode: en-de
+title: My New Hugo Site
+theme: PaperMod
