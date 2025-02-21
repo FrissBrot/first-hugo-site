@@ -1,0 +1,60 @@
+media:
+  input: static/assets
+  output: /assets
+  extensions: [ jpg, jpeg, png, webp, gif, svg ]
+
+content:
+  - name: general
+    label: General
+    type: file
+    format: yaml
+    path: hugo.yaml
+    icon: file-cog
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: subTitle
+        label: subtitle
+        type: string
+      - name: ProfileMode
+        label: "Profile Mode"
+        type: boolean
+      - name: picture
+        label: picture
+        type: image
+        list: true
+        options:
+          path: /assets/images/
+          extensions: [ jpg, jpeg, png, webp, gif, svg ]
+
+  - name: posts
+    label: Posts
+    type: collection
+    path: content/posts
+    icon: book-check
+    view:
+      fields:
+        - title
+    fields:
+      - name: draft
+        label: Draft
+        type: boolean
+        default: "false"
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: body
+        label: Page content
+        type: rich-text
+        options:
+          format: markdown
+          image:
+            input: static/assets/images
+            output: /assets/images/
+            path: static/assets/images
+            extensions: [ jpg, jpeg, png, webp, gif, svg ]
+        required: false
